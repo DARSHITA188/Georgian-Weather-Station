@@ -25,16 +25,20 @@ After rebooting re-check that the dmesg | grep i2c command shows whether I2C dri
 Optionally, to improve permformance, increase the I2C baudrate from the default of 100KHz to 400KHz by altering
 /boot/config.txt to include:
 
+# dtparam=i2c_arm=on,i2c_baudrate=400000
 
 Then reboot.
-
 Then add your user to the i2c group:
 
+# $ sudo adduser pi i2c
+
 Install some packages:
+
+# $ sudo apt-get install i2c-tools python-pip
  
 Next check that the device is communicating properly (if using a rev.1 board, use 0 for the bus not 1):
 
-$ i2cdetect	-y	1	
+# $ i2cdetect	-y	1	
 0	1	2	3	4	5	6	7	8	9	a	b	c	d	e	f
 00:		--	--	--	--	--	--	--	--	--	--	--	--	--
 10: -- --	--	--	--	--	--	--	--	--	--	--	--	--	--	--
