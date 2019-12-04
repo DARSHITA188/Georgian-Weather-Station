@@ -1,5 +1,4 @@
 # Georgian-Weather-Station
-# Auther: Darshita Patel
 
 For prototyping, the P1 header pins should be connected as follows:
 
